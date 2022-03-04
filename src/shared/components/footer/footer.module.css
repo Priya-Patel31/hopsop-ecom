@@ -1,0 +1,12 @@
+.footer-container,.footer-items{
+    justify-content: center;
+    align-items:center;
+   gap:1rem;
+    font-size:2rem;
+}
+.footer-items{
+    gap:1.5rem;
+}
+.footer-container{
+    background-color:var(--primary-color);   
+}
