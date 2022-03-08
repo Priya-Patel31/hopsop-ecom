@@ -1,8 +1,10 @@
-
+import Header from "./shared/components/header/header";
 function App() {
-  return <div className="App">
-
-  </div>;
+  return (
+    <div className="App">
+      <Header></Header>
+    </div>
+  );
 }
 
 export default App;
