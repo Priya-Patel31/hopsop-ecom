@@ -1,7 +1,7 @@
 import "./productCard.css";
 import { FiHeart } from "react-icons/fi";
 import { FaShoppingCart } from "react-icons/fa";
-import { IoHeartCircleSharp } from "react-icons/io";
+
 const ProductCard = () => {
   return (
     <a
@@ -24,7 +24,6 @@ const ProductCard = () => {
         <div className="vertical-card-content">
           <div className="flex-row vertical-card-heading">
             <h3 className="text-xs">Climb Backyard</h3>
-            <IoHeartCircleSharp className="text-sm" />
           </div>
           <span className="discount-price font-semibold">Rs.3000</span>
           <span className="original-price">Rs.4000</span>
