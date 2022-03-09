@@ -138,10 +138,8 @@ color: var(--dark-pink);
   .hamburger-icon{
       display: block;
   }
-  
-  
- 
 }
+
 @media only screen and (max-width:600px) {
   .navbar-link-list-item{
       display: none;
@@ -156,7 +154,4 @@ color: var(--dark-pink);
   .wishlist-button{
     margin : 0 1rem;
   }
-  
-  
- 
 }

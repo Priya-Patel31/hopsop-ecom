@@ -12,12 +12,12 @@ const Header = () => {
         <div className="hamburger-icon">
           <FaBars />
         </div>
-        <Logo></Logo>
-        <NavItems></NavItems>
+        <Logo/>
+        <NavItems/>
       </div>
-      <Searchbar></Searchbar>
+      <Searchbar/>
       <div className="right-navbar">
-       <NavIcons></NavIcons>
+       <NavIcons/>
       </div>
     </nav>
   );
