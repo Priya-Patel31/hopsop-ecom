@@ -1,9 +1,6 @@
-import Logo from "../logo/logo";
-import NavIcons from "../nav-icons/nav-icons";
-import NavItems from "../nav-items/nav-items";
-import Searchbar from "../searchBar/searchbar";
-import "../header/header.css"
-import {FaBars} from "react-icons/fa"
+import {NavIcons,NavItems,Searchbar,Logo} from "../assets/index"
+import "../header/header.css";
+import { FaBars } from "../assets/icons";
 
 const Header = () => {
   return (
@@ -12,12 +9,12 @@ const Header = () => {
         <div className="hamburger-icon">
           <FaBars />
         </div>
-        <Logo/>
-        <NavItems/>
+        <Logo />
+        <NavItems />
       </div>
-      <Searchbar/>
+      <Searchbar />
       <div className="right-navbar">
-       <NavIcons/>
+        <NavIcons />
       </div>
     </nav>
   );

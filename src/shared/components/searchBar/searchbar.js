@@ -1,4 +1,5 @@
-import { BsSearch } from "react-icons/bs";
+import { BsSearch } from "../assets/icons"
+
 const Searchbar = () => {
   return (
     <div class="search-bar-container">

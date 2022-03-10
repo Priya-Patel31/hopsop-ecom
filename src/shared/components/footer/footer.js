@@ -1,7 +1,5 @@
 import "./footer.css";
-import { AiFillGithub } from "react-icons/ai";
-import { BsTwitter } from "react-icons/bs";
-import { FaLinkedinIn } from "react-icons/fa";
+import {AiFillGithub,BsTwitter,FaLinkedinIn} from "../assets/icons"
 
 const Footer = () => {
   return (

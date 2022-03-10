@@ -1,4 +1,4 @@
-import {FaUserAlt,FaShoppingCart,FaHeart} from "react-icons/fa"
+import {FaUserAlt,FaShoppingCart,FaHeart} from "../assets/icons"
 
 const NavIcons = () => {
   return (

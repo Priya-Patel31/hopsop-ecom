@@ -1,6 +1,5 @@
 import "./productCard.css";
-import { FiHeart } from "react-icons/fi";
-import { FaShoppingCart } from "react-icons/fa";
+import { FiHeart,FaShoppingCart } from "../assets/icons"
 
 const ProductCard = () => {
   return (
