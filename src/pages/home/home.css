@@ -1,0 +1,50 @@
+.features-container{
+    justify-content: space-evenly;
+    background-color:var(--lighter-white-color);
+    border-radius:1rem;
+}
+.heading,.categories-heading{
+    text-align: center;
+}
+.hero-container{
+    height:100%;
+    position:relative;
+}
+.hero-image-text-overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 25%;
+    left: 4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 3.4vw; 
+
+}
+.button-shop-now{
+    display: block;
+    font-size: 1.8vw;
+}
+.brand{
+    width:12.5rem;
+    height:6.25rem
+}
+.brand img{
+    width:9.37rem;
+    height:6.25rem;
+}
+.card-hover{
+    overflow: hidden;
+    transition: all ease 1s;
+}
+.hover-image:hover{
+    transform:scale(1.1);
+    transition: all ease 0.6s; 
+}
+
+@media only screen and (max-width:600px){
+    .feature-logo-container img{
+        width:9rem;
+        height: 6rem;
+    }
+}
