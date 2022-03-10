@@ -2,7 +2,7 @@ import { Fragment } from "react";
 
 const Brands = () => {
   return (
-    <Fragment>
+    <>
       <div className="space-4rem"></div>
       <h2 className="heading text-lg font-extrabold">
         FEATURED <span className="text-pink font-extrabold">BRANDS</span>
@@ -41,7 +41,7 @@ const Brands = () => {
         </div>
       </div>
       <div className="space-4rem"></div>
-    </Fragment>
+    </>
   );
 };
 export default Brands;

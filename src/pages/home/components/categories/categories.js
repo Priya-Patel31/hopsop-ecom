@@ -3,7 +3,7 @@ import CategoryCard from "../categoryCard/categoryCard";
 
 const Categories = () => {
   return (
-    <Fragment>
+    <>
       <div className="space-4rem"></div>
       <h2 className="heading text-lg font-extrabold">
         SHOP BY <span className="text-pink font-extrabold">CATEGORY</span>
@@ -15,7 +15,7 @@ const Categories = () => {
         <CategoryCard />
         <CategoryCard />
       </div>
-    </Fragment>
+    </>
   );
 };
 

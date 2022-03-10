@@ -3,7 +3,7 @@ import ProductCard from "../../../../shared/components/productCard/productCard";
 
 const Products = () => {
   return (
-    <Fragment>
+    <>
       <div className="space-4rem"></div>
       <h2 className="heading text-lg font-extrabold">
         OUR <span className="text-pink font-extrabold">PRODUCTS</span>
@@ -15,7 +15,7 @@ const Products = () => {
         <ProductCard />
         <ProductCard />
       </div>
-    </Fragment>
+    </>
   );
 };
 export default Products;

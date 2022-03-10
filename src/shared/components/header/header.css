@@ -14,19 +14,15 @@
 .logo {
   margin: 0 1rem;
 }
-.left-navbar {
+.left-navbar,.nav-icons  {
   display: flex;
 }
 .navbar-link-list-item {
   margin: 0 1rem;
 }
-.right-navbar {
+.right-navbar,.navbar-links {
   display: flex;
   align-items:center;
-}
-.navbar-links {
-  display: flex;
-  align-items: center;
 }
 .badge-icon{
   font-size: 1.3rem ;
@@ -51,9 +47,6 @@
   border: none;
   outline: 0px;
 }
-.nav-icons {
-  display: flex;
-}
 .nav-icon-link {
   align-items: center;
   border:none;
@@ -64,7 +57,6 @@
   font-size: 1rem;
   border: none;
 }
-
 .dropdown {
 position: relative;
 display: inline-block;
@@ -95,11 +87,9 @@ display: block;
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
 .dropdown:hover .dropbtn {
 color: var(--dark-pink);
 }
-
 .wishlist-button{
     margin: 0rem  2.5rem;
 }
@@ -138,9 +128,6 @@ color: var(--dark-pink);
   .hamburger-icon{
       display: block;
   }
-  
-  
- 
 }
 @media only screen and (max-width:600px) {
   .navbar-link-list-item{
@@ -156,7 +143,4 @@ color: var(--dark-pink);
   .wishlist-button{
     margin : 0 1rem;
   }
-  
-  
- 
 }
