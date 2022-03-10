@@ -18,7 +18,7 @@ const Footer = () => {
           </a>
         </li>
         <li className="footer-item list-style-none">
-          <a href="https://github.com/Priya-Patel31">
+          <a href="https://twitter.com/priya_patel31">
             <span className="footer-icon">
               <BsTwitter className="icon-white text-sm" />
             </span>
