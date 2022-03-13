@@ -75,6 +75,33 @@ const Filter = () => {
             );
           })}
         </ul>
+         
+        <p className="text-xs my-2 font-bold">Others</p>
+        <ul className="filter-type">
+          <li className="my-2 list-style-none">
+            <input
+              type="checkbox"
+              checked={false}
+              name="includeOutOfStock"
+              id="includeOutOfStock"
+            />
+            <label htmlFor="includeOutOfStock" className="text-xs">
+              Include out of stock
+            </label>
+          </li>
+          <li className="mb-2 list-style-none">
+            <input
+              type="checkbox"
+              checked={false}
+              name="fastDelivery"
+              id="fastDelivery"
+            />
+            <label htmlFor="fastDelivery" className="text-xs">
+              Fast Delivery
+            </label>
+          </li>
+        </ul>
+
       </div>
     </div>
   );
