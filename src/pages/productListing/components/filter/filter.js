@@ -15,13 +15,13 @@ const Filter = () => {
         <p className="mt-2 font-bold text-xs">SORT</p>
         <ul className="filter-type">
           <li className="my-2 list-style-none">
-            <input type="radio" value="price-high-to-low" name="price" />
+            <input type="radio" value="price-high-to-low" name="price" id="price-high-to-low" />
             <label htmlFor="price-high-to-low" className="text-xs">
               Price High to low
             </label>
           </li>
           <li className="mb-2 list-style-none">
-            <input type="radio" value="price-low-to-high" name="price" />
+            <input type="radio" value="price-low-to-high" name="price" id="price-low-to-high" />
             <label htmlFor="price-low-to-high" className="text-xs">
               Price Low to high
             </label>
@@ -33,7 +33,7 @@ const Filter = () => {
           {categoryData.categories.map((category) => {
             return (
               <li key={category.id} className="mb-2 list-style-none">
-                <input type="checkbox" checked={true} />
+                <input type="checkbox" name={category.name} checked={true} id={category.name} />
                 <label htmlFor={category.name} className="text-xs">
                   {category.name}
                 </label>
@@ -47,7 +47,7 @@ const Filter = () => {
           {ratingData.ratings.map((rating) => {
             return (
               <li key={rating.id} className="mb-2 list-style-none">
-                <input type="checkbox" checked={true} />
+                <input type="checkbox" name={rating.name} checked={true} id={rating.name}/>
                 <label htmlFor={rating.name} className="text-xs">
                  {rating.name}
                 </label>
