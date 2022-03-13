@@ -1,0 +1,11 @@
+{
+  "categories": [
+    { "id": 1, "name": "Bagpack" },
+    { "id": 2, "name": "Tent" },
+    { "id": 3, "name": "Climbing Stick" },
+    { "id": 4, "name": "Hanging Buckle" },
+    { "id": 5, "name": "Boots" },
+    { "id": 6, "name": "Helmet" },
+    { "id": 7, "name": "Knife" }
+  ]
+}

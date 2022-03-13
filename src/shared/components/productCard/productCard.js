@@ -1,7 +1,13 @@
 import "./productCard.css";
-import { FiHeart,FaShoppingCart } from "../assets/icons"
+import { FiHeart, FaShoppingCart } from "../../../assets/icons";
 
-const ProductCard = () => {
+const ProductCard = (product) => {
+  let {
+    value: { name, image_url, original_price, discount_percent}
+  } = product;
+
+  let discounted_price = parseInt(original_price - original_price*(discount_percent/100), 10);
+
   return (
     <a
       className="vertical-card-container"
@@ -11,7 +17,7 @@ const ProductCard = () => {
         <div className="vertical-image-container">
           <img
             className="vertical-image hover-image"
-            src="https://cdn.shopify.com/s/files/1/0550/0465/9885/products/h24-600x600.png?v=1615134141"
+            src={image_url}
             alt="verticalImage"
           />
           <span className="badge bg-primary badge-trending text-xs">
@@ -22,10 +28,12 @@ const ProductCard = () => {
       <div className="vertical-card-text-container">
         <div className="vertical-card-content">
           <div className="flex-row vertical-card-heading">
-            <h3 className="text-xs">Climb Backyard</h3>
+            <h3 className="text-xs">{name}</h3>
           </div>
-          <span className="discount-price font-semibold">Rs.3000</span>
-          <span className="original-price">Rs.4000</span>
+          <span className="discount-price font-semibold">
+            Rs.{discounted_price}
+          </span>
+          <span className="original-price">Rs.{original_price}</span>
         </div>
       </div>
       <button className="button primary-button-pink w-100 mt-1">

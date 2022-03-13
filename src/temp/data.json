@@ -1,52 +1,52 @@
 {
-  "data": [
-    {
-      "id": 1,
-      "brand": "Nike",
-      "name": "Hiking BagPack",
-      "category": "Bagpack",
-      "details": "Etiam vehicula, sapien eget congue posuere, nisi diam mattis urna, in semper turpis nunc in odio. Aenean aliquet metus nec felis consequat luctus. Cras molestie sit amet sem sed fermentum",
-      "stock": 2,
-      "original_price": 2000,
-      "discount": 5,
-      "rating": 2,
-      "url": "https://cdn.shopify.com/s/files/1/1628/5651/products/product-22_large.png?v=1480682835"
-    },
-    {
+    "products": [
+      {
+        "id": 1,
+        "brand": "Nike",
+        "name": "Hiking BagPack",
+        "category": "BagPack",
+        "details": "Etiam vehicula, sapien eget congue posuere, nisi diam mattis urna, in semper turpis nunc in odio. Aenean aliquet metus nec felis consequat luctus. Cras molestie sit amet sem sed fermentum",
+        "original_price": 2000,
+        "discount_percent": 10,
+        "in_stock": true,
+        "rating": 2,
+        "image_url": "https://cdn.shopify.com/s/files/1/1628/5651/products/product-22_large.png?v=1480682835"
+      },
+      {
         "id": 2,
         "brand": "Puma",
         "name": "Dome Tent",
         "category": "Tent",
         "details": "Etiam vehicula, sapien eget congue posuere, nisi diam mattis urna, in semper turpis nunc in odio. Aenean aliquet metus nec felis consequat luctus. Cras molestie sit amet sem sed fermentum",
-        "stock": 2,
         "original_price": 1000,
-        "discount": 5,
-        "rating": 2,
-        "url": "https://cdn.shopify.com/s/files/1/1628/5651/produc…06-497c-989f-ca0fde413b40_grande.jpg?v=1480931800"
+        "discount_percent": 5,
+        "in_stock": true,
+        "rating": 5,
+        "image_url": "https://cdn.shopify.com/s/files/1/1628/5651/products/img22_aa975432-3806-497c-989f-ca0fde413b40_large.jpg?v=1480931800"
       },
       {
         "id": 3,
         "brand": "Nike",
-        "name": "Hiking BagPack",
-        "category": "Bagpack",
+        "name": "Dome Tent",
+        "category": "Tent",
+        "in_stock": false,
         "details": "Etiam vehicula, sapien eget congue posuere, nisi diam mattis urna, in semper turpis nunc in odio. Aenean aliquet metus nec felis consequat luctus. Cras molestie sit amet sem sed fermentum",
-        "stock": 4,
         "original_price": 1500,
-        "discount": 4,
+        "discount_percent": 4,
         "rating": 1,
-        "url": "https://cdn.shopify.com/s/files/1/1628/5651/products/img23_grande.jpg?v=1480924438"
+        "image_url": "https://cdn.shopify.com/s/files/1/1628/5651/products/img23_grande.jpg?v=1480924438"
       },
       {
         "id": 4,
-        "brand": "Sky Bags",
-        "name": "Hiking BagPack",
-        "category": "Bagpack",
+        "brand": "Puma",
+        "name": "Dome Tent",
+        "category": "Tent",
         "details": "Etiam vehicula, sapien eget congue posuere, nisi diam mattis urna, in semper turpis nunc in odio. Aenean aliquet metus nec felis consequat luctus. Cras molestie sit amet sem sed fermentum",
-        "stock": 2,
+        "in_stock": true,
         "original_price": 2000,
-        "discount": 5,
+        "discount_percent": 5,
         "rating": 4,
-        "url": "https://cdn.shopify.com/s/files/1/1628/5651/products/img18_grande.jpg?v=1481085270"
+        "image_url": "https://cdn.shopify.com/s/files/1/1628/5651/products/img18_grande.jpg?v=1481085270"
       },
       {
         "id": 5,
@@ -54,11 +54,11 @@
         "name": "Hiking BagPack",
         "category": "Bagpack",
         "details": "Etiam vehicula, sapien eget congue posuere, nisi diam mattis urna, in semper turpis nunc in odio. Aenean aliquet metus nec felis consequat luctus. Cras molestie sit amet sem sed fermentum",
-        "stock": 2,
+        "in_stock": false,
         "original_price": 1500,
-        "discount": 9,
+        "discount_percent": 9,
         "rating": 2,
-        "url": "https://cdn.shopify.com/s/files/1/1628/5651/collections/coillection--1_450x450_crop_top.jpg?v=1481088394"
+        "image_url": "https://cdn.shopify.com/s/files/1/1628/5651/products/product-3_8c4968bf-1927-431e-af5b-330cfd3c1c26_large.png?v=1480682837"
       },
       {
         "id": 6,
@@ -66,11 +66,11 @@
         "name": "Rappel rack",
         "category": "Climbing Stick",
         "details": "Etiam vehicula, sapien eget congue posuere, nisi diam mattis urna, in semper turpis nunc in odio. Aenean aliquet metus nec felis consequat luctus. Cras molestie sit amet sem sed fermentum",
-        "stock": 8,
+        "in_stock": true,
         "original_price": 3000,
-        "discount": 18,
+        "discount_percent": 18,
         "rating": 4,
-        "url": "https://cdn.shopify.com/s/files/1/1628/5651/products/img28_grande.jpg?v=1481107210"
+        "image_url": "https://cdn.shopify.com/s/files/1/1628/5651/products/img28_grande.jpg?v=1481107210"
       },
       {
         "id": 7,
@@ -78,11 +78,11 @@
         "name": "Hiking BagPack",
         "category": "Bagpack",
         "details": "Etiam vehicula, sapien eget congue posuere, nisi diam mattis urna, in semper turpis nunc in odio. Aenean aliquet metus nec felis consequat luctus. Cras molestie sit amet sem sed fermentum",
-        "stock": 4,
+        "in_stock": true,
         "original_price": 2000,
-        "discount": 5,
+        "discount_percent": 5,
         "rating": 2,
-        "url": "https://cdn.shopify.com/s/files/1/1628/5651/products/product-22_large.png?v=1480682835"
+        "image_url": "https://m.media-amazon.com/images/I/91+n2CwQrpS._SL1500_.jpg"
       },
       {
         "id": 8,
@@ -90,11 +90,11 @@
         "name": "Ladder Golf",
         "category": "Hanging Buckle",
         "details": "Etiam vehicula, sapien eget congue posuere, nisi diam mattis urna, in semper turpis nunc in odio. Aenean aliquet metus nec felis consequat luctus. Cras molestie sit amet sem sed fermentum",
-        "stock": 2,
+        "in_stock": false,
         "original_price": 200,
-        "discount": 1,
-        "rating": 2,
-        "url": "https://cdn.shopify.com/s/files/1/1628/5651/products/img6_99f3d7d4-a317-4ebe-847b-58cf97713670_1024x1024.jpg?v=1480929388"
+        "discount_percent": 1,
+        "rating": 1,
+        "image_url": "https://cdn.shopify.com/s/files/1/1628/5651/products/img6_99f3d7d4-a317-4ebe-847b-58cf97713670_1024x1024.jpg?v=1480929388"
       },
       {
         "id": 9,
@@ -102,11 +102,11 @@
         "name": "Hiking BagPack",
         "category": "Bagpack",
         "details": "Etiam vehicula, sapien eget congue posuere, nisi diam mattis urna, in semper turpis nunc in odio. Aenean aliquet metus nec felis consequat luctus. Cras molestie sit amet sem sed fermentum",
-        "stock": 4,
+        "in_stock": true,
         "original_price": 1300,
-        "discount": 5,
-        "rating": 4,
-        "url": "https://cdn.shopify.com/s/files/1/1628/5651/products/product-22_large.png?v=1480682835"
+        "discount_percent": 5,
+        "rating": 3,
+        "image_url": "https://m.media-amazon.com/images/I/91+n2CwQrpS._SL1500_.jpg"
       },
       {
         "id": 10,
@@ -114,11 +114,11 @@
         "name": "Ladder Golf",
         "category": "Hanging Buckle",
         "details": "Etiam vehicula, sapien eget congue posuere, nisi diam mattis urna, in semper turpis nunc in odio. Aenean aliquet metus nec felis consequat luctus. Cras molestie sit amet sem sed fermentum",
-        "stock": 2,
+        "in_stock": true,
         "original_price": 400,
-        "discount": 8,
+        "discount_percent": 8,
         "rating": 2,
-        "url": "https://cdn.shopify.com/s/files/1/1628/5651/products/img6_99f3d7d4-a317-4ebe-847b-58cf97713670_1024x1024.jpg?v=1480929388"
+        "image_url": "https://cdn.shopify.com/s/files/1/1628/5651/products/img4_large.jpg?v=1480481957"
       },
       {
         "id": 11,
@@ -126,11 +126,11 @@
         "name": "GTX Hiking Boot",
         "category": "Boots",
         "details": "Etiam vehicula, sapien eget congue posuere, nisi diam mattis urna, in semper turpis nunc in odio. Aenean aliquet metus nec felis consequat luctus. Cras molestie sit amet sem sed fermentum",
-        "stock": 2,
+        "in_stock": true,
         "original_price": 2000,
-        "discount": 5,
-        "rating": 2,
-        "url": "https://cdn.shopify.com/s/files/1/1628/5651/products/img14_large.jpg?v=1481087674"
+        "discount_percent": 12,
+        "rating": 5,
+        "image_url": "https://cdn.shopify.com/s/files/1/1628/5651/products/img14_large.jpg?v=1481087674"
       },
       {
         "id": 12,
@@ -138,34 +138,35 @@
         "name": "GTX Hiking Boot",
         "category": "Boots",
         "details": "Etiam vehicula, sapien eget congue posuere, nisi diam mattis urna, in semper turpis nunc in odio. Aenean aliquet metus nec felis consequat luctus. Cras molestie sit amet sem sed fermentum",
-        "stock": 2,
+        "in_stock": true,
         "original_price": 2000,
-        "discount": 5,
+        "discount_percent": 26,
         "rating": 2,
-        "url": "https://cdn.shopify.com/s/files/1/1628/5651/products/img13_03a14b83-2f39-4c8c-8053-af282c11def5_large.jpg?v=1481092393"
+        "image_url": "https://cdn.shopify.com/s/files/1/1628/5651/products/img13_03a14b83-2f39-4c8c-8053-af282c11def5_large.jpg?v=1481092393"
       },
       {
         "id": 13,
         "brand": "Red Chief",
-        "name": "Hiking BagPack",
+        "name": "Waterproof Boot",
         "category": "Boots",
         "details": "Etiam vehicula, sapien eget congue posuere, nisi diam mattis urna, in semper turpis nunc in odio. Aenean aliquet metus nec felis consequat luctus. Cras molestie sit amet sem sed fermentum",
-        "stock": 1,
+        "in_stock": true,
         "original_price": 1000,
-        "discount": 10,
+        "discount_percent": 30,
         "rating": 3,
-        "url": "https://cdn.shopify.com/s/files/1/1628/5651/products/img12_large.jpg?v=1480925763"
-      },{
+        "image_url": "https://cdn.shopify.com/s/files/1/1628/5651/products/img12_large.jpg?v=1480925763"
+      },
+      {
         "id": 14,
         "brand": "Nike",
         "name": "Solar Powered Helmet",
         "category": "Helmet",
         "details": "Etiam vehicula, sapien eget congue posuere, nisi diam mattis urna, in semper turpis nunc in odio. Aenean aliquet metus nec felis consequat luctus. Cras molestie sit amet sem sed fermentum",
-        "stock": 3,
+        "in_stock": true,
         "original_price": 2000,
-        "discount": 5,
-        "rating": 2,
-        "url": "https://cdn.shopify.com/s/files/1/1628/5651/products/img8_97e0b66a-aba3-4110-a7b3-d10c4b646ea6.jpg?v=1480481947"
+        "discount_percent": 5,
+        "rating": 4,
+        "image_url": "https://cdn.shopify.com/s/files/1/1628/5651/products/img8_97e0b66a-aba3-4110-a7b3-d10c4b646ea6.jpg?v=1480481947"
       },
       {
         "id": 15,
@@ -173,11 +174,11 @@
         "name": "Matt Helmet",
         "category": "Helmet",
         "details": "Etiam vehicula, sapien eget congue posuere, nisi diam mattis urna, in semper turpis nunc in odio. Aenean aliquet metus nec felis consequat luctus. Cras molestie sit amet sem sed fermentum",
-        "stock": 3,
+        "in_stock": true,
         "original_price": 2224,
-        "discount": 5,
-        "rating": 2,
-        "url": "https://m.media-amazon.com/images/I/71yIg9Ui65L._SL1500_.jpg"
+        "discount_percent": 10,
+        "rating": 3,
+        "image_url": "https://m.media-amazon.com/images/I/71yIg9Ui65L._SL1500_.jpg"
       },
       {
         "id": 16,
@@ -185,11 +186,11 @@
         "name": "Helmet Visor",
         "category": "Helmet",
         "details": "Etiam vehicula, sapien eget congue posuere, nisi diam mattis urna, in semper turpis nunc in odio. Aenean aliquet metus nec felis consequat luctus. Cras molestie sit amet sem sed fermentum",
-        "stock": 3,
+        "in_stock": false,
         "original_price": 499,
-        "discount": 20,
-        "rating": 2,
-        "url": "https://m.media-amazon.com/images/I/51OPUYL5PiS._SX679_.jpg"
+        "discount_percent": 20,
+        "rating": 5,
+        "image_url": "https://m.media-amazon.com/images/I/51OPUYL5PiS._SX679_.jpg"
       },
       {
         "id": 17,
@@ -197,11 +198,11 @@
         "name": "Pairing Knife",
         "category": "Knife",
         "details": "Etiam vehicula, sapien eget congue posuere, nisi diam mattis urna, in semper turpis nunc in odio. Aenean aliquet metus nec felis consequat luctus. Cras molestie sit amet sem sed fermentum",
-        "stock": 2,
+        "in_stock": true,
         "original_price": 300,
-        "discount": 4,
+        "discount_percent": 4,
         "rating": 3,
-        "url": "https://cdn.shopify.com/s/files/1/1628/5651/products/img10_large.jpg?v=1480928282"
+        "image_url": "https://cdn.shopify.com/s/files/1/1628/5651/products/img10_large.jpg?v=1480928282"
       },
       {
         "id": 18,
@@ -209,12 +210,12 @@
         "name": "Pairing Knife",
         "category": "Knife",
         "details": "Etiam vehicula, sapien eget congue posuere, nisi diam mattis urna, in semper turpis nunc in odio. Aenean aliquet metus nec felis consequat luctus. Cras molestie sit amet sem sed fermentum",
-        "stock": 2,
+        "in_stock": true,
         "original_price": 200,
-        "discount": 2,
+        "discount_percent": 2,
         "rating": 4,
-        "url": "https://cdn.shopify.com/s/files/1/1628/5651/products/product-22_large.png?v=1480682835"
+        "image_url": "https://cdn.shopify.com/s/files/1/1628/5651/products/img27_large.jpg?v=1480928282"
       }
-      
-  ]
-}
+    ]
+  }
+  

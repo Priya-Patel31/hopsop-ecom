@@ -1,4 +1,4 @@
-import { BsSearch } from "../assets/icons"
+import { BsSearch } from "../../../assets/icons"
 
 const Searchbar = () => {
   return (

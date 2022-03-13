@@ -1,13 +1,13 @@
-import {NavIcons,NavItems,Searchbar,Logo} from "../assets/index"
-import "../header/header.css";
-import { FaBars } from "../assets/icons";
+import {NavIcons,NavItems,Searchbar,Logo} from "./index"
+import "./header.css";
+import { GoThreeBars } from "../../../assets/icons";
 
 const Header = () => {
   return (
     <nav className="nav-container">
       <div className="left-navbar">
         <div className="hamburger-icon">
-          <FaBars />
+          <GoThreeBars />
         </div>
         <Logo />
         <NavItems />
