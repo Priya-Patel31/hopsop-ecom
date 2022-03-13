@@ -12,7 +12,7 @@ const Products = () => {
         <div class="vertical-card-outer-container">
 
             {products.map((product) => {
-                return (<ProductCard value={product}/>)
+                return (<ProductCard key={product.id} value={product}/>)
             })}
             </div>
       </div>
