@@ -1,4 +1,4 @@
-import {FaUserAlt,FaShoppingCart,FaHeart} from "../assets/icons"
+import {FaUserAlt,FaShoppingCart,FaHeart} from "../../../assets/icons"
 
 const NavIcons = () => {
   return (

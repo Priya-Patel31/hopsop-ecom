@@ -1,5 +1,5 @@
 import "./footer.css";
-import {AiFillGithub,BsTwitter,FaLinkedinIn} from "../assets/icons"
+import {AiFillGithub,BsTwitter,FaLinkedinIn} from "../../../assets/icons"
 
 const Footer = () => {
   return (

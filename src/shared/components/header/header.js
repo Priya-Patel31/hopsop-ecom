@@ -1,6 +1,6 @@
-import {NavIcons,NavItems,Searchbar,Logo} from "../assets/index"
+import {NavIcons,NavItems,Searchbar,Logo} from "./index"
 import "../header/header.css";
-import { FaBars } from "../assets/icons";
+import { FaBars } from "../../../assets/icons";
 
 const Header = () => {
   return (

@@ -1,0 +1,11 @@
+{
+    "ratings": [
+      { "id": 1, "name": "5 star" },
+      { "id": 2, "name": "4 star" },
+      { "id": 3, "name": "3 star" },
+      { "id": 4, "name": "2 star" },
+      { "id": 5, "name": "1 star" }
+     
+    ]
+  }
+  
