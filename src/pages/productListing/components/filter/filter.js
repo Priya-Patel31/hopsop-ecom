@@ -1,5 +1,4 @@
-import categoryData from "../../../../temp/category.json";
-import ratingData from "../../../../temp/rating.json";
+import axios from "axios";
 
 const Filter = () => {
   return (
@@ -12,7 +11,7 @@ const Filter = () => {
           </a>
         </div>
 
-        <p className="mt-2 font-bold text-xs">SORT</p>
+        <p className="mt-2 font-bold text-xs">SORT BY PRICE</p>
         <ul className="filter-type">
           <li className="my-2 list-style-none">
             <input
@@ -22,7 +21,7 @@ const Filter = () => {
               id="price-high-to-low"
             />
             <label htmlFor="price-high-to-low" className="text-xs">
-              Price High to low
+              High to low
             </label>
           </li>
           <li className="mb-2 list-style-none">
@@ -33,12 +32,12 @@ const Filter = () => {
               id="price-low-to-high"
             />
             <label htmlFor="price-low-to-high" className="text-xs">
-              Price Low to high
+              Low to high
             </label>
           </li>
         </ul>
 
-        <p className="my-2 font-bold text-xs">Categories</p>
+        {/* <p className="my-2 font-bold text-xs">Categories</p>
         <ul className="filter-type">
           {categoryData.categories.map((category) => {
             return (
@@ -55,10 +54,29 @@ const Filter = () => {
               </li>
             );
           })}
-        </ul>
+        </ul> */}
 
-        <p className="text-xs my-2 font-bold">Rating</p>
-        <ul>
+        {/* <p className="my-2 font-bold text-xs">Brands</p>
+        <ul className="filter-type">
+          {productData.product.map((product) => {
+            return (
+              <li key={product.id} className="mb-2 list-style-none">
+                <input
+                  type="checkbox"
+                  name={product.name}
+                  checked={true}
+                  id={product.name}
+                />
+                <label htmlFor={product.name} className="text-xs">
+                  {product.name}
+                </label>
+              </li>
+            );
+          })}
+        </ul> */}
+
+        {/* <p className="text-xs my-2 font-bold">Rating</p>
+        <ul className="filter-type">
           {ratingData.ratings.map((rating) => {
             return (
               <li key={rating.id} className="mb-2 list-style-none">
@@ -74,10 +92,10 @@ const Filter = () => {
               </li>
             );
           })}
-        </ul>
-         
+        </ul> */}
+
         <p className="text-xs my-2 font-bold">Others</p>
-        <ul className="filter-type">
+        <ul>
           <li className="my-2 list-style-none">
             <input
               type="checkbox"
@@ -101,7 +119,6 @@ const Filter = () => {
             </label>
           </li>
         </ul>
-
       </div>
     </div>
   );

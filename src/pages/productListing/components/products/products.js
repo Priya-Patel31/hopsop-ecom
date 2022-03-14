@@ -1,8 +1,8 @@
 import { ProductCard} from "../../index";
-import productData from "../../../../temp/data.json"
+import { useProduct } from "../../../../context/products/productContext";
 
 const Products = () => {
-    let products = productData.products;
+    let {products} = useProduct();
 
     return (
         <div class="hero-section-container">
