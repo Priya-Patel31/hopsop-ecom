@@ -3,7 +3,7 @@ import { ratings } from "../../../../temp/rating.json";
 
 const Filter = () => {
   let { state, categories, dispatch } = useProduct();
-  console.log(state.brands);
+
   return (
     <div className="product-sidebar">
       <div className="filters-container mx-2">
@@ -28,7 +28,7 @@ const Filter = () => {
             <input
               type="radio"
               value="HIGH_TO_LOW"
-              checked={state.sortBy=== "HIGH_TO_LOW"}
+              checked={state.sortBy === "HIGH_TO_LOW"}
               name="price"
               id="price-high-to-low"
               onChange={(e) =>
@@ -43,7 +43,7 @@ const Filter = () => {
             <input
               type="radio"
               value="LOW_TO_HIGH"
-              checked={state.sortBy=== "LOW_TO_HIGH"}
+              checked={state.sortBy === "LOW_TO_HIGH"}
               name="price"
               id="price-low-to-high"
               onChange={(e) =>

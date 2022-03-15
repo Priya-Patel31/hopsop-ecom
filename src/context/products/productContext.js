@@ -43,7 +43,6 @@ const ProductContextProvider = ({ children }) => {
     })();
   }, []);
 
-console.log(state.categories);
   return (
     <ProductContext.Provider value={{ products:filteredData, categories:state.categories,state ,dispatch}}>
       {children}
