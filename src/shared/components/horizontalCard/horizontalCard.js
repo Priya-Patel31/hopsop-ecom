@@ -12,10 +12,11 @@ const HorizontalCard = (props) => {
     details,
     original_price,
     discount_percent,
-    quantity,
+    qty,
+    
   } = props;
 
-  let { dispatch } = useCart();
+  let {updateQuantity,removeFromCart } = useCart();
 
   return (
     <div className="card-horizontal">
@@ -32,18 +33,18 @@ const HorizontalCard = (props) => {
         <div className="card-quantity flex-row">
           <button
             className="text-sm quantity-btn"
-            disabled={quantity === 1 ? true : false}
-            onClick={() => {
-              dispatch({ type: "DECREASE_QUANTITY", payload: { id: _id } });
+            disabled={qty === 1 ? true : false}
+            onClick={async() => {
+             await updateQuantity(_id,false);
             }}
           >
             <AiFillMinusCircle />
           </button>
-          &nbsp;<p className="text-xs">{quantity}</p>&nbsp;
+          &nbsp;<p className="text-xs">{qty}</p>&nbsp;
           <button
             className="text-sm quantity-btn"
-            onClick={() => {
-              dispatch({ type: "INCREASE_QUANTITY", payload: { id: _id } });
+            onClick={async() => {
+             await updateQuantity(_id);
             }}
           >
             <AiFillPlusCircle />
@@ -60,8 +61,8 @@ const HorizontalCard = (props) => {
         <div className="flex-row card-horizontal-button">
           <button
             className="button primary-button-pink cart-btn"
-            onClick={() => {
-              dispatch({ type: "REMOVE_FROM_CART", payload: { id: _id } });
+            onClick={async() => {
+              await removeFromCart(_id)
             }}
           >
             Remove from cart

@@ -5,10 +5,11 @@ import { Link,useNavigate } from "react-router-dom";
 import { useCart } from "../../../context/cart/cartContext";
 
 
+
 const ProductCard = (props) => {
   let { name,_id, image_url, original_price, discount_percent } = props;
   let navigate = useNavigate();
-const {findItemInCart,dispatch} = useCart();
+const {findItemInCart,dispatch,addToCart} = useCart();
 
 let isItemPresent = findItemInCart(_id);
 
@@ -44,11 +45,11 @@ let isItemPresent = findItemInCart(_id);
       </div>
       <button
         className="button primary-button-pink w-100 mt-1"
-        onClick={(e) => {
+        onClick={async(e) => {
           e.stopPropagation();
           e.preventDefault();
          if(!isItemPresent){
-          dispatch({ type: "ADD_TO_CART", payload: { product: props } });
+          await addToCart(props);
          }else{
             navigate("/carts");
          }
