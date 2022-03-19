@@ -1,4 +1,5 @@
 import {FaUserAlt,FaShoppingCart,FaHeart} from "../../../assets/icons"
+import { Link } from "react-router-dom";
 
 const NavIcons = () => {
   return (
@@ -15,31 +16,31 @@ const NavIcons = () => {
             <a href="/authentication/signin/signin.html" className="text-xs">
               Login
             </a>
-            <a href="/profile_page/profile_page.html" className="text-xs">
+            <Link to="" className="text-xs">
               Profile
-            </a>
+            </Link>
           </div>
         </button>
       </li>
       <li>
-        <a
-          href="../wishlist/wishlist.html"
+        <Link
+          to="/wishlist"
           className="flex-col nav-icon-link wishlist-button">
           <span className="badge-icon">
             <FaHeart className="text-xs icon-size"/>
             <span className="badge-count">10</span>
           </span>
           <span className="nav-list-link">Wishlist</span>
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="../carts/carts.html" className="flex-col nav-icon-link">
+        <Link to="/carts" className="flex-col nav-icon-link">
           <span className="badge-icon">
             <FaShoppingCart className="text-xs icon-size"/>
             <span className="badge-count">10</span>
           </span>
           <span className="nav-list-link">Cart</span>
-        </a>
+        </Link>
       </li>
     </ul>
   );

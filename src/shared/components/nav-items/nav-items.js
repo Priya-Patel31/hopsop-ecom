@@ -1,11 +1,12 @@
+import { Link } from "react-router-dom";
 const NavItems = () => {
   return (
     <ul className="navbar-links list-style-none">
       <li className="navbar-link-list-item">
-        <a href="/">Home</a>
+        <Link to="/">Home</Link>
       </li>
       <li className="navbar-link-list-item">
-        <a href="/products/products.html">Shop</a>
+      <Link to="/products">Shop</Link>
       </li>
     </ul>
   );

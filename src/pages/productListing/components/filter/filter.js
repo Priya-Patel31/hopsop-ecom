@@ -11,7 +11,6 @@ const Filter = () => {
           <p className="mr-1 text-sm font-bold">FILTERS</p>
           <button
             className="text-xxs"
-            value="RESET_FILTER"
             onClick={(e) =>
               dispatch({
                 type: "RESET_FILTER",

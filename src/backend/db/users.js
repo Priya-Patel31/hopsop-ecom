@@ -7,6 +7,8 @@ import { formatDate } from "../utils/authUtils";
  * Every user will have cart (Quantity of all Products in Cart is set to 1 by default), wishList by default
  * */
 
+
+//  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIxN2I2MDZjMS05OTk3LTRlNWYtODBmMC0xYWEyN2VlOGE1NTMiLCJlbWFpbCI6ImFkYXJzaGJhbGlrYUBnbWFpbC5jb20iLCJpYXQiOjE2NDc2MjgwODR9.CcWEd_xGSx_T1lCyeyyys4JLCVuWR5ThmVVtgi0qWmE"
 export const users = [
   {
     _id: uuid(),
@@ -35,4 +37,14 @@ export const users = [
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
+  {
+    _id: uuid(),
+    firstName: "Priya",
+    lastName: "Patel",
+    email: "priya@gmail.com",
+    password: bcyrpt.hashSync("priya123", 5),
+    createdAt: formatDate(),
+    updatedAt: formatDate(),
+  },
 ];
+

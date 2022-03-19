@@ -1,19 +1,20 @@
-import { useEffect } from "react";
 import "./global.css";
 import Home from "./pages/home/home";
 import ProductListing from "./pages/productListing/ProductListing";
+import {Routes,Route} from "react-router-dom";
 import MockAPI from "./mockMan";
+import { Cart } from "./pages/cart/cart";
 
 
 function App() {
-  // useEffect(()=>{
-  //   fetch("/api/products").then((res)=>res.json()).then((res) => console.log(res))
-  // },[])
   return (
     <div className="App">
-      {/* <Home /> */}
-      <ProductListing />
-      {/* <MockAPI/> */}
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="/products" element={<ProductListing />} />
+        <Route path="/carts" element={<Cart />} />
+        <Route path="/mockApi" element={<MockAPI />} />
+      </Routes>
     </div>
   );
 }
