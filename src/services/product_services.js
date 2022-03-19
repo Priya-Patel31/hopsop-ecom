@@ -1,10 +1,13 @@
 // fetching products
+import { brands } from "../temp/brands.json";
+
 export const fetchProducts = async () => {
   try {
-    const response = await (await fetch("/api/products")).json()
+    const { products } = await (await fetch("/api/products")).json();
+    const { categories } = await (await fetch("/api/categories")).json();
 
     return {
-      data: response.products,
+      data: { products, categories, brands },
       success: true,
       message: "products fetched successfully",
     };

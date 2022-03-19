@@ -1,0 +1,12 @@
+{
+  "brands": [
+    { "id": 1, "name": "Nike" },
+    { "id": 2, "name": "Puma" },
+    { "id": 3, "name": "Sky Bags" },
+    { "id": 4, "name": "Lone Wolf Treestands" },
+    { "id": 5, "name": "Reebok" },
+    { "id": 6, "name": "Red Chief" },
+    { "id": 7, "name": "Steelbird" },
+    { "id": 8, "name": "Nova" }
+  ]
+}
