@@ -9,7 +9,7 @@ const WishlistContainer = () => {
     <div>
       <main className="wislist-cards-container">
         <div className="space-1rem"></div>
-        <h2 className="wishlist-heading mt-2 text-sm font-semibold">
+        <h2 className="text-center mt-2 text-sm font-semibold">
           MY WISHLIST
         </h2>
         <div className="space-3rem"></div>
