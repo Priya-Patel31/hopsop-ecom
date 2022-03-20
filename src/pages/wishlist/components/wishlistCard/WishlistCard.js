@@ -36,7 +36,7 @@ const WishlistCard = (props) => {
       <button
         className="button primary-button-pink mt-1 w-100"
         onClick={() => {
-          if (isItemPresentInCart) moveToCart(props);
+          if (!isItemPresentInCart) moveToCart(props);
         }}
       >
         <FaShoppingCart className="icon-white mr-1" />
