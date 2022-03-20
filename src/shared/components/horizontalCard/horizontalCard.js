@@ -2,6 +2,7 @@ import { AiFillMinusCircle, AiFillPlusCircle } from "../../../assets/icons";
 import { price } from "../../utils/function";
 import { useCart } from "../../../context/cart/cartContext";
 import "./horizontalCard.css";
+import { useWishlist } from "../../../context/wishlist/wishlistContext";
 
 const HorizontalCard = (props) => {
   let {
@@ -17,6 +18,9 @@ const HorizontalCard = (props) => {
   } = props;
 
   let {updateQuantity,removeFromCart } = useCart();
+  const {findItemInWishlist,addToWishlist,removeFromWishlist} = useWishlist();
+
+  let isItemPresentInWishlist = findItemInWishlist(_id);
 
   return (
     <div className="card-horizontal">
@@ -67,8 +71,16 @@ const HorizontalCard = (props) => {
           >
             Remove from cart
           </button>
-          <button className="button secondary-button-light cart-btn">
-            Add to wishlist
+          <button className="button secondary-button-light cart-btn" onClick={async (e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          if(!isItemPresentInWishlist){
+            await addToWishlist(props);
+          }else{
+            await removeFromWishlist(_id)
+          }
+        }}>
+           {isItemPresentInWishlist ? "Remove from wishlist":"Add to wishlist"} 
           </button>
         </div>
       </div>
