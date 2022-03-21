@@ -29,10 +29,9 @@ export const CartContextProvider = ({ children }) => {
     cart: [],
     status: "IDLE",
   });
-  const findItemInCart = (_id) => {
-    return cart.some((item) => {
-      return item._id === _id;
-    });
+  const findItemInCart = (_id) => 
+     cart.some((item) =>  item._id === _id
+  )
   };
 
   const cartSummary = cart.reduce(

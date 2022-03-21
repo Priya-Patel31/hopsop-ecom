@@ -5,9 +5,8 @@ const CartItems = () => {
   return (
     <div className="cart-items-container">
       <div className="cart-item">
-        {cart.map((item) => {
-         return <HorizontalCard key={item._id} {...item} />;
-        })}
+        {cart.map((item) =>  <HorizontalCard key={item._id} {...item} />
+        )}
       </div>
       <Coupon  />
     </div>
