@@ -1,9 +1,8 @@
+import { price } from "./function";
+
 const getSortedData = (products, state) => {
   let updatedProducts = [...products];
-
-  function price(originalPrice, discount) {
-    return parseInt(originalPrice) - parseInt((originalPrice * discount) / 100);
-  }
+  
   if (state.sortBy === "HIGH_TO_LOW") {
     updatedProducts.sort(
       (a, b) =>

@@ -30,8 +30,8 @@ const ProductContextProvider = ({ children }) => {
 
   useEffect(() => {
     (async function () {
+     
       const { data, success, message } = await fetchProducts();
-
       if (success) {
         dispatch({
           type: "FETCH_DATA",

@@ -1,15 +1,22 @@
 import "./productCard.css";
 import { FiHeart, FaShoppingCart } from "../../../assets/icons";
+import { price } from "../../utils/function";
+import { Link,useNavigate } from "react-router-dom";
+import { useCart } from "../../../context/cart/cartContext";
 
-const ProductCard = (product) => {
-  let {
-    value: { name, image_url, original_price, discount_percent}
-  } = product;
 
-  let discounted_price = parseInt(original_price - original_price*(discount_percent/100), 10);
+
+const ProductCard = (props) => {
+  let { name,_id, image_url, original_price, discount_percent } = props;
+  let navigate = useNavigate();
+const {findItemInCart,dispatch,addToCart} = useCart();
+
+let isItemPresent = findItemInCart(_id);
+
 
   return (
-    <a
+    <Link
+      to="/singleProduct"
       className="vertical-card-container"
       href="/single_product/single_product.html"
     >
@@ -31,20 +38,36 @@ const ProductCard = (product) => {
             <h3 className="text-xs">{name}</h3>
           </div>
           <span className="discount-price font-semibold">
-            Rs.{discounted_price}
+            Rs.{price(original_price, discount_percent)}
           </span>
           <span className="original-price">Rs.{original_price}</span>
         </div>
       </div>
-      <button className="button primary-button-pink w-100 mt-1">
+      <button
+        className="button primary-button-pink w-100 mt-1"
+        onClick={async(e) => {
+          e.stopPropagation();
+          e.preventDefault();
+         if(!isItemPresent){
+          await addToCart(props);
+         }else{
+            navigate("/carts");
+         }
+        }}
+      >
         <FaShoppingCart className="icon-white mr-1" />
-        Add to cart
+        {isItemPresent ? "Go to cart" :"Add to cart"}
       </button>
-      <button className="button secondary-button-light w-100">
+      <button
+        className="button secondary-button-light w-100"
+        onClick={() => {
+          dispatch({ type: "ADD_TO_WISHLIST", payload: { wishlist: props } });
+        }}
+      >
         <FiHeart className="mr-1" />
         Add to wishlist
       </button>
-    </a>
+    </Link>
   );
 };
 

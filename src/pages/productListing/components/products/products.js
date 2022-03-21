@@ -11,7 +11,7 @@ const Products = () => {
       <div class="space-2rem"></div>
       <div class="vertical-card-outer-container">
         {products.map((product) => {
-          return <ProductCard key={product.id} value={product} />;
+          return <ProductCard key={product.id} {...product} />;
         })}
       </div>
     </div>

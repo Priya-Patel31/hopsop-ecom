@@ -1,21 +1,30 @@
 // fetching products
+import fetchApi from "../shared/utils/fetchApi";
 import { brands } from "../temp/brands.json";
 
-export const fetchProducts = async () => {
-  try {
-    const { products } = await (await fetch("/api/products")).json();
-    const { categories } = await (await fetch("/api/categories")).json();
-
+export const fetchProducts = async() => {
+   const { data, success } = await fetchApi({
+    url: "/api/products",
+    method: "get",
+    propertyName: "products",
+  });
+  const { data: categoryData, success: categorySuccess } = await fetchApi({
+    url: "/api/categories",
+    method: "get",
+    propertyName: "category",
+  });
+  if (success && categorySuccess) {
     return {
-      data: { products, categories, brands },
+      data: { products: data.products, categories: categoryData.categories, brands },
       success: true,
       message: "products fetched successfully",
     };
-  } catch (e) {
+  } else {
     return {
       data: null,
       success: false,
       message: "products failed to fetch",
     };
   }
+ 
 };

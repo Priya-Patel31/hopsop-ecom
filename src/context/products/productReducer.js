@@ -1,8 +1,7 @@
 export const reducer = (state, action) => {
   switch (action.type) {
-
-    case "FETCH_DATA":{
-     const updatedState={
+    case "FETCH_DATA": {
+      const updatedState = {
         ...state,
         products: action.payload.products,
         categories: action.payload.categories,
@@ -10,16 +9,16 @@ export const reducer = (state, action) => {
           return { ...acc, [curr.category_name]: false };
         }, {}),
 
-        brands:action.payload.brands,
-      selectedBrands: action.payload.brands.reduce((acc, curr) => {
+        brands: action.payload.brands,
+        selectedBrands: action.payload.brands.reduce((acc, curr) => {
           return { ...acc, [curr.name]: false };
         }, {}),
       };
-      return {...updatedState,intialState:updatedState}
+      return { ...updatedState, intialState: updatedState };
     }
 
     case "SORT":
-      console.log(action.payload.value)
+      console.log(action.payload.value);
       return { ...state, sortBy: action.payload.value };
 
     case "BRANDS":
@@ -44,10 +43,11 @@ export const reducer = (state, action) => {
       updatedCategories[action.payload.key] = action.payload.value;
       return { ...state, selectedCategories: updatedCategories };
 
-      case "RESET_FILTER":
-        return {...state.intialState,intialState:state.intialState}
-        
+    case "RESET_FILTER":
+      return { ...state.intialState, intialState: state.intialState };
+
     default:
+      console.log(`Case : ${action.payload.type} not found`);
       return state;
   }
 };
