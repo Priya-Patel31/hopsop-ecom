@@ -13,11 +13,11 @@ const Coupon = ()=>{
         <div className="my-1 font-bold text-xs">PRICE DETAILS</div>
         <div className="flex-row my-1 justify-between">
           <p className="col-80-pc text-xs">Total MRP</p>
-          <p className="col-20-pc text-xs">₹{cartSummary.cartValue}</p>
+          <p className="col-20-pc text-xs">₹{cartSummary?.cartValue}</p>
         </div>
         <div className="flex-row my-1 justify-between">
           <p className="col-80-pc text-xs">Discount on MRP</p>
-          <p className="col-20-pc text-xs">₹{cartSummary.totalDiscount}</p>
+          <p className="col-20-pc text-xs">₹{cartSummary?.totalDiscount}</p>
         </div>
 
         <div className="flex-row my-1 justify-between">
@@ -26,7 +26,7 @@ const Coupon = ()=>{
         </div>
         <div className="flex-row my-1 justify-between">
           <p className="col-80-pc font-bold text-xs">Total Amount</p>
-          <p className="col-20-pc font-bold text-xs">₹{cartSummary.cartValue-cartSummary.totalDiscount+40}</p>
+          <p className="col-20-pc font-bold text-xs">₹{cartSummary?.cartValue-cartSummary?.totalDiscount+40}</p>
         </div>
         <button className="my-2 button primary-button-pink">Place Order</button>
       </div>
