@@ -30,6 +30,13 @@
   font-size: 1.3rem;
 
 }
+.badge-count{
+  border-radius: 50%;
+  width:20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+}
 .search-bar-container {
   display: flex;
   align-items: center;
