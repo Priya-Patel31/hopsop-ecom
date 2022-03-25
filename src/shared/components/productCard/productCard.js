@@ -1,20 +1,19 @@
 import "./productCard.css";
 import { FiHeart, FaShoppingCart } from "../../../assets/icons";
 import { price } from "../../utils/function";
-import { Link, useNavigate } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { useCart } from "../../../context/cart/cartContext";
-import { useWishlist } from "../../../context/wishlist/wishlistContext";
 
 
 
 const ProductCard = (props) => {
-  let { name, _id, image_url, original_price, discount_percent } = props;
+  let { name,_id, image_url, original_price, discount_percent } = props;
   let navigate = useNavigate();
-  const { findItemInCart, addToCart } = useCart();
-  const {findItemInWishlist,addToWishlist,removeFromWishlist} = useWishlist();
+const {findItemInCart,dispatch,addToCart} = useCart();
 
-  let isItemPresentInCart = findItemInCart(_id);
-  let isItemPresentInWishlist = findItemInWishlist(_id);
+let isItemPresent = findItemInCart(_id);
+
+
   return (
     <Link
       to="/singleProduct"
@@ -46,33 +45,27 @@ const ProductCard = (props) => {
       </div>
       <button
         className="button primary-button-pink w-100 mt-1"
-        onClick={async (e) => {
+        onClick={async(e) => {
           e.stopPropagation();
           e.preventDefault();
-          if (!isItemPresentInCart) {
-            await addToCart(props);
-          } else {
+         if(!isItemPresent){
+          await addToCart(props);
+         }else{
             navigate("/carts");
-          }
+         }
         }}
       >
         <FaShoppingCart className="icon-white mr-1" />
-        {isItemPresentInCart ? "Go to cart" : "Add to cart"}
+        {isItemPresent ? "Go to cart" :"Add to cart"}
       </button>
       <button
         className="button secondary-button-light w-100"
-        onClick={async (e) => {
-          e.stopPropagation();
-          e.preventDefault();
-          if(!isItemPresentInWishlist){
-            await addToWishlist(props);
-          }else{
-            await removeFromWishlist(_id)
-          }
+        onClick={() => {
+          dispatch({ type: "ADD_TO_WISHLIST", payload: { wishlist: props } });
         }}
       >
-        <FiHeart className="mr-1"/>
-        {isItemPresentInWishlist ? "Remove from wishlist" :"Add to wishlist"}
+        <FiHeart className="mr-1" />
+        Add to wishlist
       </button>
     </Link>
   );

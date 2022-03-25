@@ -21,9 +21,8 @@ export const CartContextProvider = ({ children }) => {
       if (success) {
         dispatch({ type: "UPDATE_CART", payload: { cart: data.cart } });
         dispatch({ type: "UPDATE_STATUS", payload: { status: "SUCCESS" } });
-      } else {
-        dispatch({ type: "UPDATE_STATUS", payload: { status: "FAILED" } });
       }
+      dispatch({ type: "UPDATE_STATUS", payload: { status: "FAILED" } });
     })();
   }, []);
 

@@ -3,7 +3,6 @@
   --primary-color:#031b88;
   --pink-color: #fd5056;
   --dark-pink:#f50057;
-  --red:rgb(246, 6, 6);
   --light-color:white;
   --lighter-white-color:#f0f8ff;
   --dark-color:rgba(0, 0, 0, 0.87);
@@ -45,9 +44,6 @@ a{
 .text-grey{
   color:var(--dark-grey);
 }
-.text-red{
-  color:var(--red);
-}
 .text-center{
   text-align: center;
 }
@@ -58,6 +54,7 @@ ul{
 .font-md{
   font-size: 0.8rem;
 }
+
 .flex-row{
   display: flex;
 }
