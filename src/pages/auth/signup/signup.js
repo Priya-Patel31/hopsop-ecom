@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { signupImage } from "../../../assets/images";
 import { AuthContainer } from "../components/authContainer";
 import {
@@ -9,6 +9,7 @@ import {
 } from "../../../assets/icons";
 import { useAuth } from "../../../context/auth/authContext";
 
+
 const Signup = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -17,6 +18,7 @@ const Signup = () => {
     password: "",
   });
   const { signup } = useAuth();
+  const navigate = useNavigate();
   const handleOnChange = (e) => {
     setFormData({...formData ,[e.target.id] : e.target.value});
   };
@@ -101,9 +103,13 @@ const Signup = () => {
         </ul>
         <button
           className="button primary-button-pink my-2 text-xs"
-          onClick={(e) => {
+          onClick={async(e) => {
             e.preventDefault();
-            signup(formData);
+           const success= await signup(formData);
+            if(success){
+             navigate("/");
+            }
+
           }}
         >
           Create New Account

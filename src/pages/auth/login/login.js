@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate,useLocation} from "react-router-dom";
 import { AuthContainer } from "../components/authContainer";
 import { signin } from "../../../assets/images";
 import {
@@ -11,8 +11,10 @@ import { useAuth } from "../../../context/auth/authContext";
 
 const Login = () => {
   const [email, setEmail] = useState();
+  const navigate = useNavigate();
   const { login } = useAuth();
   const [password, setPassword] = useState();
+  const location = useLocation();
   return (
     <AuthContainer title="Login" imageUrl={signin}>
       <form className="signup-form-container flex-col">
@@ -75,9 +77,13 @@ const Login = () => {
         </ul>
         <button
           className="button primary-button-pink my-2 text-xs"
-          onClick={(e) => {
+          onClick={async(e) => {
             e.preventDefault();
-            login({ email, password });
+           const success = await login({ email, password });
+           console.log(success)
+           if(success){
+            navigate(-1)
+           }
           }}
         >
           Login

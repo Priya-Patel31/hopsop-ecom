@@ -51,8 +51,13 @@ const AuthContextProvider = ({ children }) => {
     }
     return false;
   };
+  const logout = () =>{
+    dispatch({
+      type:"LOGOUT_USER"
+    })
+  }
   return (
-    <AuthContext.Provider value={{ isUserloggedIn, token, signup, login }}>
+    <AuthContext.Provider value={{ isUserloggedIn, token, signup, login,logout }}>
       {children}
     </AuthContext.Provider>
   );

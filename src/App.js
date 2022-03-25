@@ -9,12 +9,14 @@ import { Auth } from "./pages/auth/auth";
 import { Login } from "./pages/auth/login/login";
 import { Signup } from "./pages/auth/signup/signup";
 import { PrivateRoute } from "./shared/components/privateRoute/privateRoute";
+import {useAuth} from "./context/auth/authContext"
 
 function App() {
+  const {isUserLoggedIn} = useAuth();
   return (
     <div className="App">
       <Routes>
-        <Route index element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/products" element={<ProductListing />} />
 
         <Route path="/mockApi" element={<MockAPI />} />
@@ -34,11 +36,14 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route path="/auth" element={<Auth />}>
+        { !isUserLoggedIn && 
+          <Route path="/auth" element={<Auth />}>
           <Route index element={<Login />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
         </Route>
+        }
+        
       </Routes>
     </div>
   );

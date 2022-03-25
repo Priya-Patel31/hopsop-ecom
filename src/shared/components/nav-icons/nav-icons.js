@@ -1,15 +1,16 @@
 import { FaUserAlt, FaShoppingCart, FaHeart } from "../../../assets/icons";
 import { Link ,useNavigate} from "react-router-dom";
-import { useAuth } from "../../../context/auth/authContext";
+import { useAuth} from "../../../context/auth/authContext";
 import { useCart } from "../../../context/cart/cartContext";
 import { useWishlist } from "../../../context/wishlist/wishlistContext";
 
+
 const NavIcons = () => {
-  const { isUserLoggedIn } = useAuth();
+  const { isUserloggedIn,logout } = useAuth();
   const {cart} = useCart();
   const {wishlist} = useWishlist();
 
-  const navigate = useNavigate();
+
   return (
     <ul className="nav-icons list-style-none">
       <li>
@@ -21,18 +22,18 @@ const NavIcons = () => {
             <span className="nav-list-link">User</span>
           </div>
           <div className="dropdown-content">
-            {isUserLoggedIn && (
+            {isUserloggedIn && (
               <Link to="/profile" className="text-xs">
                 Profile
               </Link>
             )}
 
-            {isUserLoggedIn ? (
-              <button className="text-xs" onClick={()=>{
-                localStorage.clear();
-                navigate("/") }}>
+            {isUserloggedIn ? (
+              <Link to="/" className="text-xs" onClick={()=>{
+                logout();
+              }}>
                 Logout
-              </button>
+              </Link>
             ) : (
               <Link to="/auth/login" className="text-xs">
                 Login
