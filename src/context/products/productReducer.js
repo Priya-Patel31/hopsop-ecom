@@ -18,7 +18,6 @@ export const reducer = (state, action) => {
     }
 
     case "SORT":
-      console.log(action.payload.value);
       return { ...state, sortBy: action.payload.value };
 
     case "BRANDS":

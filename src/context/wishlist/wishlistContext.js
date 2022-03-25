@@ -21,7 +21,6 @@ const WishlistContextProvider = ({ children }) => {
       dispatch({ type: "UPDATE_STATUS", payload: { status: "PENDING" } });
       const { data, success, message } = await fetchWishlistDataApi();
       if (success) {
-        console.log(data);
         dispatch({
           type: "UPDATE_WISHLIST",
           payload: { wishlist: data.wishlist },

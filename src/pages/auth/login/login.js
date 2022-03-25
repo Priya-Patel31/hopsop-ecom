@@ -14,7 +14,6 @@ const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
   const [password, setPassword] = useState();
-  const location = useLocation();
   return (
     <AuthContainer title="Login" imageUrl={signin}>
       <form className="signup-form-container flex-col">
@@ -80,7 +79,7 @@ const Login = () => {
           onClick={async(e) => {
             e.preventDefault();
            const success = await login({ email, password });
-           console.log(success)
+         
            if(success){
             navigate(-1)
            }
