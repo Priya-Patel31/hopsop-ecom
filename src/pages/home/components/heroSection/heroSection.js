@@ -1,6 +1,8 @@
 import { HiOutlineArrowRight } from "react-icons/hi";
+import { useNavigate } from "react-router";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   return (
     <div className="hero-container component-image-square">
       <img
@@ -13,7 +15,7 @@ const HeroSection = () => {
         </p>
         <p className="font-semibold">To Go Place for</p>
         <p className="font-semibold">WANDERLUST</p>
-        <button className="button primary-button-pink button-shop-now mt-2">
+        <button className="button primary-button-pink button-shop-now mt-2" onClick={()=>navigate("/products")}>
           Shop Now
           <HiOutlineArrowRight className="ml-1" />
         </button>
