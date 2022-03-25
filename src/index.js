@@ -6,20 +6,23 @@ import { ProductContextProvider } from "./context/products/productContext";
 import { BrowserRouter } from "react-router-dom";
 import { CartContextProvider } from "./context/cart/cartContext";
 import { WishlistContextProvider } from "./context/wishlist/wishlistContext";
+import { AuthContextProvider } from "./context/auth/authContext";
 // Call make Server
 makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-    <CartContextProvider>
-      <WishlistContextProvider>
-        <ProductContextProvider>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </ProductContextProvider>
-      </WishlistContextProvider>
-    </CartContextProvider>
+    <AuthContextProvider>
+      <CartContextProvider>
+        <WishlistContextProvider>
+          <ProductContextProvider>
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </ProductContextProvider>
+        </WishlistContextProvider>
+      </CartContextProvider>
+    </AuthContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

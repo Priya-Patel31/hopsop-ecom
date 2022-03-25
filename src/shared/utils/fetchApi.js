@@ -20,6 +20,7 @@ async function fetchApi({ url, method, body, propertyName }) {
       message: `${propertyName} fetched successfully!!`,
     };
   } catch (e) {
+    console.log(e);
     return {
       data: null,
       success: false,

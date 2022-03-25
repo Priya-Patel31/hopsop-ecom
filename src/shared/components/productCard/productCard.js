@@ -52,7 +52,7 @@ const ProductCard = (props) => {
           if (!isItemPresentInCart) {
             await addToCart(props);
           } else {
-            navigate("/carts");
+            navigate("/cart");
           }
         }}
       >
