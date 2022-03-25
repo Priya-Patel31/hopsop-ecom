@@ -18,7 +18,6 @@ export const reducer = (state, action) => {
     }
 
     case "SORT":
-      console.log(action.payload.value);
       return { ...state, sortBy: action.payload.value };
 
     case "BRANDS":
@@ -47,7 +46,6 @@ export const reducer = (state, action) => {
       return { ...state.intialState, intialState: state.intialState };
 
     default:
-      console.log(`Case : ${action.payload.type} not found`);
       return state;
   }
 };
