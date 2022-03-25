@@ -5,13 +5,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../../../context/cart/cartContext";
 import { useWishlist } from "../../../context/wishlist/wishlistContext";
 
-
-
 const ProductCard = (props) => {
   let { name, _id, image_url, original_price, discount_percent } = props;
   let navigate = useNavigate();
   const { findItemInCart, addToCart } = useCart();
-  const {findItemInWishlist,addToWishlist,removeFromWishlist} = useWishlist();
+  const { findItemInWishlist, addToWishlist, removeFromWishlist } =
+    useWishlist();
 
   let isItemPresentInCart = findItemInCart(_id);
   let isItemPresentInWishlist = findItemInWishlist(_id);
@@ -64,15 +63,15 @@ const ProductCard = (props) => {
         onClick={async (e) => {
           e.stopPropagation();
           e.preventDefault();
-          if(!isItemPresentInWishlist){
+          if (!isItemPresentInWishlist) {
             await addToWishlist(props);
-          }else{
-            await removeFromWishlist(_id)
+          } else {
+            await removeFromWishlist(_id);
           }
         }}
       >
-        <FiHeart className="mr-1"/>
-        {isItemPresentInWishlist ? "Remove from wishlist" :"Add to wishlist"}
+        <FiHeart className="mr-1" />
+        {isItemPresentInWishlist ? "Remove from wishlist" : "Add to wishlist"}
       </button>
     </Link>
   );

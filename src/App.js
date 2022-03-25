@@ -9,41 +9,43 @@ import { Auth } from "./pages/auth/auth";
 import { Login } from "./pages/auth/login/login";
 import { Signup } from "./pages/auth/signup/signup";
 import { PrivateRoute } from "./shared/components/privateRoute/privateRoute";
-import {useAuth} from "./context/auth/authContext"
+import { useAuth } from "./context/auth/authContext";
+import {WithHeaderAndFooter} from "./shared/components/withHeaderAndFooter/withHeaderAndFooter"
 
 function App() {
-  const {isUserLoggedIn} = useAuth();
+  const { isUserLoggedIn } = useAuth();
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<ProductListing />} />
+        <Route path="/" element={<WithHeaderAndFooter />}>
+          <Route index element={<Home />} />
+          <Route path="products" element={<ProductListing />} />
 
-        <Route path="/mockApi" element={<MockAPI />} />
-        <Route
-          path="/cart"
-          element={
-            <PrivateRoute>
-              <Cart />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/wishlist"
-          element={
-            <PrivateRoute>
-              <Wishlist />
-            </PrivateRoute>
-          }
-        />
-        { !isUserLoggedIn && 
-          <Route path="/auth" element={<Auth />}>
-          <Route index element={<Login />} />
-          <Route path="login" element={<Login />} />
-          <Route path="signup" element={<Signup />} />
+          <Route path="mockApi" element={<MockAPI />} />
+          <Route
+            path="cart"
+            element={
+              <PrivateRoute>
+                <Cart />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="wishlist"
+            element={
+              <PrivateRoute>
+                <Wishlist />
+              </PrivateRoute>
+            }
+          />
         </Route>
-        }
-        
+        {!isUserLoggedIn && (
+          <Route path="/auth" element={<Auth />}>
+            <Route index element={<Login />} />
+            <Route path="login" element={<Login />} />
+            <Route path="signup" element={<Signup />} />
+          </Route>
+        )}
       </Routes>
     </div>
   );

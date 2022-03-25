@@ -66,7 +66,7 @@ const Filter = () => {
               dispatch({ type: "RANGE", payload: { value: e.target.value } });
             }}
           />
-          <div className="mb-1">Range : {state.range}</div>
+          <div className="mb-1 text-xs">Range : {state.range}</div>
         </div>
 
         <p className="my-2 font-bold text-xs">SORT BY CATEGORY</p>

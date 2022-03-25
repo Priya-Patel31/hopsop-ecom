@@ -4,6 +4,10 @@
   align-items: center;
   gap: 1rem;
   font-size: 2rem;
+  
+}
+.footer-container{
+  border-top: 5px solid var(--light-color);
 }
 .footer-items {
   gap: 1.5rem;

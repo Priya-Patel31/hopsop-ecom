@@ -3,7 +3,7 @@
     color: var(--light-color);
     grid-column-start: 1;
     grid-column-end: 2;
-    position: fixed;
+    position: sticky;
     top: 12vh;
     padding: 1rem 0;
     left: 0;
@@ -12,8 +12,6 @@
     width: 15.62rem;
   }
   .products-container {
-    display: grid;
-    grid-template-rows: 4.37rem auto;
     background-color: var(--bg-color);
   }
   .vertical-card-container {
