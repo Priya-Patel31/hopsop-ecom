@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import {
   getCartApi,
   addToCartApi,
-  updateQuantityApi,removeFromCartApi
+  updateQuantityApi,
+  removeFromCartApi,
 } from "../../services/cart_services";
 import { price } from "../../shared/utils/function";
 import { reducer } from "./cartReducer";
@@ -29,10 +30,7 @@ export const CartContextProvider = ({ children }) => {
     cart: [],
     status: "IDLE",
   });
-  const findItemInCart = (_id) => 
-     cart.some((item) =>  item._id === _id
-  )
-  };
+  const findItemInCart = (_id) => cart.some((item) => item._id === _id);
 
   const cartSummary = cart.reduce(
     (acc, curr) => {
@@ -66,14 +64,14 @@ export const CartContextProvider = ({ children }) => {
     }
     return false;
   };
-  const removeFromCart = async(_id) =>{
-    const {data,success} = await removeFromCartApi(_id);
+  const removeFromCart = async (_id) => {
+    const { data, success } = await removeFromCartApi(_id);
     if (success) {
       dispatch({ type: "UPDATE_CART", payload: { cart: data.cart } });
       return true;
     }
     return false;
-  }
+  };
 
   return (
     <CartContext.Provider
@@ -82,7 +80,9 @@ export const CartContextProvider = ({ children }) => {
         dispatch,
         findItemInCart,
         cartSummary,
-        addToCart,updateQuantity,removeFromCart
+        addToCart,
+        updateQuantity,
+        removeFromCart,
       }}
     >
       {children}

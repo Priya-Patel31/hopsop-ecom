@@ -8,6 +8,7 @@ import {fetchProducts,reducer,getSortedData,getFilterdData} from "./index"
 
 const ProductContext = createContext();
 
+
 const ProductContextProvider = ({ children }) => {
   let intialState = {
     products: [],
@@ -44,7 +45,7 @@ const ProductContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <ProductContext.Provider value={{ products:filteredData, categories:state.categories,state ,dispatch}}>
+    <ProductContext.Provider value={{ products:filteredData, categories:state.categories,state ,dispatch,allProducts:state.products}}>
       {children}
     </ProductContext.Provider>
   );
