@@ -31,6 +31,7 @@ const AuthContextProvider = ({ children }) => {
           user: data.createdUser,
         },
       });
+      console.log(data);
       return true;
     }
     return false;
@@ -47,6 +48,7 @@ const AuthContextProvider = ({ children }) => {
           user: data.foundUser,
         },
       });
+      console.log(data);
       return true;
     }
     return false;

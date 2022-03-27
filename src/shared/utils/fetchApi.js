@@ -11,7 +11,6 @@ async function fetchApi({ url, method, body, propertyName }) {
       headers: { authorization: user!== null ?user.token:"" },
     });
  
-   console.log(status);
     
     if (status === 200 || status === 201) {
       return {
@@ -22,6 +21,7 @@ async function fetchApi({ url, method, body, propertyName }) {
     } 
     throw Error("API request failed");
   } catch (e) {
+    console.log(e);
     return {
     
       data: null,

@@ -3,6 +3,7 @@ export const reducer = (state, action) => {
     case "UPDATE_USER": {
       const { isUserloggedIn, token, user } = action.payload;
       localStorage.setItem("user", JSON.stringify(action.payload));
+      console.log(action.payload);
       return { isUserloggedIn, token, user };
     }
     case "LOGOUT_USER": {
