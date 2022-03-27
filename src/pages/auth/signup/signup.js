@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { signupImage } from "../../../assets/images";
 import { AuthContainer } from "../components/authContainer";
 import {
@@ -8,7 +8,6 @@ import {
   AiOutlineArrowRight,
 } from "../../../assets/icons";
 import { useAuth } from "../../../context/auth/authContext";
-
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -20,7 +19,14 @@ const Signup = () => {
   const { signup } = useAuth();
   const navigate = useNavigate();
   const handleOnChange = (e) => {
-    setFormData({...formData ,[e.target.id] : e.target.value});
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+  const handleOnClick = async (e) => {
+    e.preventDefault();
+    const success = await signup(formData);
+    if (success) {
+      navigate("/");
+    }
   };
   return (
     <AuthContainer title="Signup" imageUrl={signupImage}>
@@ -37,9 +43,7 @@ const Signup = () => {
                 type="text"
                 placeholder="priya"
                 value={formData.firstName}
-                onChange={
-                  handleOnChange
-                }
+                onChange={handleOnChange}
                 required
               />
             </div>
@@ -55,9 +59,7 @@ const Signup = () => {
                 type="text"
                 placeholder="patel"
                 value={formData.lastName}
-                onChange={
-                  handleOnChange
-                }
+                onChange={handleOnChange}
                 required
               />
             </div>
@@ -73,9 +75,7 @@ const Signup = () => {
                 type="email"
                 placeholder="priya@gmail.com"
                 value={formData.email}
-                onChange={
-                  handleOnChange
-                }
+                onChange={handleOnChange}
                 required
               />
               <FaEnvelope className="email-icon text-xs"></FaEnvelope>
@@ -92,9 +92,7 @@ const Signup = () => {
                 type="password"
                 placeholder="•••••••••"
                 value={formData.password}
-                onChange={
-                  handleOnChange
-                }
+                onChange={handleOnChange}
                 required
               />
               <BsFillEyeFill className="password-eye-icon text-xs"></BsFillEyeFill>
@@ -103,14 +101,7 @@ const Signup = () => {
         </ul>
         <button
           className="button primary-button-pink my-2 text-xs"
-          onClick={async(e) => {
-            e.preventDefault();
-           const success= await signup(formData);
-            if(success){
-             navigate("/");
-            }
-
-          }}
+          onClick={handleOnClick}
         >
           Create New Account
         </button>
