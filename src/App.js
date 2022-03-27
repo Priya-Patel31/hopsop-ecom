@@ -16,7 +16,6 @@ function App() {
   const { isUserLoggedIn } = useAuth();
   return (
     <div className="App">
-      <Link to="/mockApi">MockMan</Link>
       <Routes>
         <Route path="/" element={<WithHeaderAndFooter />}>
           <Route index element={<Home />} />
