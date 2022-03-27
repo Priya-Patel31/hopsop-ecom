@@ -1,7 +1,7 @@
 import "./global.css";
 import Home from "./pages/home/home";
 import ProductListing from "./pages/productListing/ProductListing";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route,Link } from "react-router-dom";
 import MockAPI from "./mockMan";
 import { Cart } from "./pages/cart/cart";
 import { Wishlist } from "./pages/wishlist/Wishlist";
@@ -16,6 +16,7 @@ function App() {
   const { isUserLoggedIn } = useAuth();
   return (
     <div className="App">
+      <Link to="/mockApi">MockMan</Link>
       <Routes>
         <Route path="/" element={<WithHeaderAndFooter />}>
           <Route index element={<Home />} />
