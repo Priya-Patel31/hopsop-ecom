@@ -1,7 +1,7 @@
 import "./global.css";
 import Home from "./pages/home/home";
 import ProductListing from "./pages/productListing/ProductListing";
-import { Routes, Route,Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import MockAPI from "./mockMan";
 import { Cart } from "./pages/cart/cart";
 import { Wishlist } from "./pages/wishlist/Wishlist";
@@ -10,18 +10,18 @@ import { Login } from "./pages/auth/login/login";
 import { Signup } from "./pages/auth/signup/signup";
 import { PrivateRoute } from "./shared/components/privateRoute/privateRoute";
 import { useAuth } from "./context/auth/authContext";
-import {WithHeaderAndFooter} from "./shared/components/withHeaderAndFooter/withHeaderAndFooter"
+import { WithHeaderAndFooter } from "./shared/components/withHeaderAndFooter/withHeaderAndFooter";
 
 function App() {
   const { isUserLoggedIn } = useAuth();
   return (
     <div className="App">
       <Routes>
+        <Route path="/mockApi" element={<MockAPI />} />
         <Route path="/" element={<WithHeaderAndFooter />}>
           <Route index element={<Home />} />
           <Route path="products" element={<ProductListing />} />
 
-          <Route path="mockApi" element={<MockAPI />} />
           <Route
             path="cart"
             element={
