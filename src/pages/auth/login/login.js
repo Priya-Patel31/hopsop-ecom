@@ -3,17 +3,42 @@ import { Link,useNavigate,useLocation} from "react-router-dom";
 import { AuthContainer } from "../components/authContainer";
 import { signin } from "../../../assets/images";
 import {
-  BsFillEyeFill,
+  BsFillEyeFill,BsFillEyeSlashFill,
   FaEnvelope,
   AiOutlineArrowRight,
 } from "../../../assets/icons";
 import { useAuth } from "../../../context/auth/authContext";
+import { toast } from "react-toastify";
 
 const Login = () => {
-  const [email, setEmail] = useState();
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const { login } = useAuth();
-  const [password, setPassword] = useState();
+  
+  const {pathname} = useLocation();
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    rememberMe : false
+  });
+  const handleOnChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const loginHandler = async (e, email, password) => {
+    e.preventDefault();
+    const success = await login({ email, password });
+    if (success) {
+      if(pathname === "/signup"){
+        navigate("/");
+      }else{
+        navigate(-1);
+      }
+      toast.success("Login successful")
+    }else{
+      toast.error("Entered wrong credentials")
+    }
+  };
   return (
     <AuthContainer title="Login" imageUrl={signin}>
       <form className="signup-form-container flex-col">
@@ -29,13 +54,13 @@ const Login = () => {
                 className="input-field form-control text-xs"
                 type="email"
                 placeholder="priya@gmail.com"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
+                value={formData.email}
+                onChange={
+                  handleOnChange
+                }
                 required
               />
-              <FaEnvelope className="email-icon text-xs"></FaEnvelope>
+              <FaEnvelope className="email-icon text-xs"/>
             </div>
           </li>
           <li className="list-style-none">
@@ -46,21 +71,35 @@ const Login = () => {
               <input
                 id="password"
                 className="input-field form-control text-xs"
-                type="password"
+                type={showPassword ? "text" : "password"}
                 placeholder="•••••••••"
-                value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
+                value={formData.password}
+                onChange={
+                  handleOnChange
+                }
                 required
               />
-              <BsFillEyeFill className="password-eye-icon text-xs"></BsFillEyeFill>
+            {showPassword ? (
+                <BsFillEyeFill
+                  className="password-eye-icon text-xs"
+                  onClick={() => {
+                    setShowPassword(!showPassword);
+                  }}
+                ></BsFillEyeFill>
+              ) : (
+                <BsFillEyeSlashFill
+                  className="password-eye-icon text-xs"
+                  onClick={() => {
+                    setShowPassword(!showPassword);
+                  }}
+                ></BsFillEyeSlashFill>
+              )}
             </div>
           </li>
           <li className="list-style-none">
             <div className="flex-row align-center justify-between mt-1">
               <div className="flex-row align-center my-2">
-                <input className="" type="checkbox" id="terms" />
+                <input type="checkbox" id="terms" onChange={handleOnChange}/>
                 <label className="text-xs ml-1" htmlFor="terms">
                   Remember me
                 </label>
@@ -76,16 +115,15 @@ const Login = () => {
         </ul>
         <button
           className="button primary-button-pink my-2 text-xs"
-          onClick={async(e) => {
-            e.preventDefault();
-           const success = await login({ email, password });
-         
-           if(success){
-            navigate(-1)
-           }
-          }}
+          onClick={(e) => loginHandler(e, formData.email, formData.password)}
         >
           Login
+        </button>
+        <button
+          className="button primary-button-pink mb-2 text-xs"
+          onClick={(e) => loginHandler(e, "priya@gmail.com", "priya123")}
+        >
+          Login As Guest
         </button>
         <div>
           <Link to="/auth/signup" className="text-xs">

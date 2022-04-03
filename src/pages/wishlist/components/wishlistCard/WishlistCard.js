@@ -3,6 +3,7 @@ import { FaHeart, FaShoppingCart } from "../../../../assets/icons";
 import { price } from "../../../../shared/utils/function";
 import { useWishlist } from "../../../../context/wishlist/wishlistContext";
 import { useCart } from "../../../../context/cart/cartContext";
+import { toast } from "react-toastify";
 
 const WishlistCard = (props) => {
   const { _id, image_url, name, original_price, discount_percent } = props;
@@ -23,7 +24,12 @@ const WishlistCard = (props) => {
             <FaHeart
               className="text-sm text-red"
               onClick={() => {
-                removeFromWishlist(_id);
+               const success = removeFromWishlist(_id);
+               if(success){
+                 toast.success("Removed item successfully")
+               }else{
+                 toast.error("Something went wrong")
+               }
               }}
             />
           </div>
@@ -36,7 +42,14 @@ const WishlistCard = (props) => {
       <button
         className="button primary-button-pink mt-1 w-100"
         onClick={() => {
-          if (!isItemPresentInCart) moveToCart(props);
+          if (!isItemPresentInCart) {
+            const success = moveToCart(props)
+            if(success){
+              toast.success("Moved to cart")
+            }else{
+              toast.error("Already in cart")
+            }
+          }
         }}
       >
         <FaShoppingCart className="icon-white mr-1" />

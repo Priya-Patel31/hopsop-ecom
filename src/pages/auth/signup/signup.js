@@ -8,6 +8,7 @@ import {
   AiOutlineArrowRight,
 } from "../../../assets/icons";
 import { useAuth } from "../../../context/auth/authContext";
+import { toast } from "react-toastify";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -25,7 +26,10 @@ const Signup = () => {
     e.preventDefault();
     const success = await signup(formData);
     if (success) {
+      toast.success("Signup successful");
       navigate("/");
+    }else{
+      toast.error("invalid credentials")
     }
   };
   return (

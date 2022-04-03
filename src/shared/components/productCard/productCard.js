@@ -4,6 +4,7 @@ import { price } from "../../utils/function";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../../../context/cart/cartContext";
 import { useWishlist } from "../../../context/wishlist/wishlistContext";
+import { toast } from "react-toastify";
 
 const ProductCard = (props) => {
   let { name, _id, image_url, original_price, discount_percent } = props;
@@ -49,7 +50,12 @@ const ProductCard = (props) => {
           e.stopPropagation();
           e.preventDefault();
           if (!isItemPresentInCart) {
-            await addToCart(props);
+            const success = await addToCart(props);
+            if (success) {
+              toast.success("Added item to cart")
+            } else {
+              toast.error("Login first")
+            }
           } else {
             navigate("/cart");
           }
@@ -64,9 +70,20 @@ const ProductCard = (props) => {
           e.stopPropagation();
           e.preventDefault();
           if (!isItemPresentInWishlist) {
-            await addToWishlist(props);
+           const success=  await addToWishlist(props);
+           if(success){
+            toast.success("Added item to wishlist")
+           }else{
+           toast.error("Login first");
+           }
+           
           } else {
-            await removeFromWishlist(_id);
+            const success = await removeFromWishlist(_id);
+            if(success){
+              toast.success("Removed item from wishlist")
+            }else{
+              toast.error("Something went wrong")
+            }
           }
         }}
       >

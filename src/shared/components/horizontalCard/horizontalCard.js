@@ -3,6 +3,7 @@ import { price } from "../../utils/function";
 import { useCart } from "../../../context/cart/cartContext";
 import "./horizontalCard.css";
 import { useWishlist } from "../../../context/wishlist/wishlistContext";
+import { toast } from "react-toastify";
 
 const HorizontalCard = (props) => {
   let {
@@ -39,7 +40,12 @@ const HorizontalCard = (props) => {
             className="text-sm quantity-btn"
             disabled={qty === 1 ? true : false}
             onClick={async() => {
-             await updateQuantity(_id,false);
+             const success = await updateQuantity(_id,false);
+             if(success){
+               toast.success("Item decreased")
+             }else{
+               toast.error("Something went wrong")
+             }
             }}
           >
             <AiFillMinusCircle />
@@ -48,7 +54,12 @@ const HorizontalCard = (props) => {
           <button
             className="text-sm quantity-btn"
             onClick={async() => {
-             await updateQuantity(_id);
+            const success = await updateQuantity(_id);
+            if(success){
+              toast.success("Item increased");
+            }else{
+              toast.error("Something went wrong")
+            }
             }}
           >
             <AiFillPlusCircle />
@@ -66,7 +77,12 @@ const HorizontalCard = (props) => {
           <button
             className="button primary-button-pink cart-btn"
             onClick={async() => {
-              await removeFromCart(_id)
+              const success = await removeFromCart(_id)
+              if(success){
+                toast.success("Removed item successfully");
+              }else{
+                toast.error("Something went wrong");
+              }
             }}
           >
             Remove from cart
@@ -75,9 +91,19 @@ const HorizontalCard = (props) => {
           e.stopPropagation();
           e.preventDefault();
           if(!isItemPresentInWishlist){
-            await addToWishlist(props);
+            const success = await addToWishlist(props);
+            if(success){
+              toast.success("Added item to wishlist");
+            }else{
+              toast.error("Something went wrong")
+            }
           }else{
-            await removeFromWishlist(_id)
+           const success = await removeFromWishlist(_id)
+           if(success){
+             toast.success("Removed item from wishlist");
+           }else{
+             toast.error("Something went wrong");
+           }
           }
         }}>
            {isItemPresentInWishlist ? "Remove from wishlist":"Add to wishlist"} 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import {blob} from "../../assets/images"
-import "./auth.css"
+import { blob } from "../../assets/images";
+import "./auth.css";
 
 function Auth() {
   return (
