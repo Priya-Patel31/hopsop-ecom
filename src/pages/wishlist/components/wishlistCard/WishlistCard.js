@@ -26,7 +26,7 @@ const WishlistCard = (props) => {
               onClick={() => {
                const success = removeFromWishlist(_id);
                if(success){
-                 toast.success("Removed item successfully")
+                 toast.success("Removed item from wishlist")
                }else{
                  toast.error("Something went wrong")
                }

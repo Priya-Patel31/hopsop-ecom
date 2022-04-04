@@ -13,6 +13,7 @@ import { useAuth } from "./context/auth/authContext";
 import { WithHeaderAndFooter } from "./shared/components/withHeaderAndFooter/withHeaderAndFooter";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { PageNotFound } from "./shared/components/404NotFound/pageNotFound";
 
 function App() {
   const { isUserLoggedIn } = useAuth();
@@ -22,6 +23,7 @@ function App() {
       <ToastContainer theme="colored"/>
       <Routes>
         <Route path="/mockApi" element={<MockAPI />} />
+        <Route path="*" element={<PageNotFound/>}/>
         <Route path="/" element={<WithHeaderAndFooter />}>
           <Route index element={<Home />} />
           <Route path="products" element={<ProductListing />} />
@@ -50,7 +52,7 @@ function App() {
             <Route path="signup" element={<Signup />} />
           </Route>
         )}
-        <Route path="*" element={{}}/>
+       
       </Routes>
     </div>
   );
