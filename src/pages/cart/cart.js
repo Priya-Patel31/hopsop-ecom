@@ -1,4 +1,4 @@
-import { Header, Footer, CartItems } from "./index";
+import { CartItems } from "./index";
 import "./cart.css";
 
 const Cart = () => {
