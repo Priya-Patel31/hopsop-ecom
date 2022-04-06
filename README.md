@@ -10,10 +10,10 @@ The E-commerce demo can be [viewed online here](https://hopsop.netlify.app).
 
 # Functionalities 
 - Cart
--Wishlist
--Filter and Sort
--Responsive design
--Toast, 404 page not found
+- Wishlist
+- Filter and Sort
+- Responsive design
+- Toast, 404 page not found
 
 # Features
 - Dashboard Page : This will be the home page of a shopping app.
