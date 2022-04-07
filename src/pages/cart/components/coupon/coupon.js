@@ -1,4 +1,5 @@
-import {useCart} from "../../../../context/cart/cartContext"
+import {useCart} from "../../index"
+
 const Coupon = ()=>{
   const {cartSummary} = useCart()
     return (

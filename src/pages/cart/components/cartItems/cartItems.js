@@ -1,5 +1,4 @@
-import { Empty } from "../../../../shared/components/empty/empty";
-import { HorizontalCard, Coupon, useCart } from "./index";
+import { HorizontalCard, Coupon, useCart ,Empty} from "../../index";
 
 const CartItems = () => {
   const { cart } = useCart();

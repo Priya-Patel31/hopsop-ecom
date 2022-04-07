@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { signupImage } from "../../../assets/images";
-import { AuthContainer } from "../components/authContainer";
 import {
+  Link,
+  useNavigate,
+  signupImage,
+  AuthContainer,
   BsFillEyeFill,
   FaEnvelope,
   AiOutlineArrowRight,
-} from "../../../assets/icons";
-import { useAuth } from "../../../context/auth/authContext";
-import { toast } from "react-toastify";
+  useAuth,
+  toast
+} from "../index";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -28,8 +29,8 @@ const Signup = () => {
     if (success) {
       toast.success("Signup successful");
       navigate("/");
-    }else{
-      toast.error("invalid credentials")
+    } else {
+      toast.error("invalid credentials");
     }
   };
   return (
