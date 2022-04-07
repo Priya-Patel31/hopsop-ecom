@@ -1,19 +1,22 @@
 import "./global.css";
-import Home from "./pages/home/home";
-import ProductListing from "./pages/productListing/ProductListing";
-import { Routes, Route, Link } from "react-router-dom";
-import MockAPI from "./mockMan";
-import { Cart } from "./pages/cart/cart";
-import { Wishlist } from "./pages/wishlist/Wishlist";
-import { Auth } from "./pages/auth/auth";
-import { Login } from "./pages/auth/login/login";
-import { Signup } from "./pages/auth/signup/signup";
-import { PrivateRoute } from "./shared/components/privateRoute/privateRoute";
-import { useAuth } from "./context/auth/authContext";
-import { WithHeaderAndFooter } from "./shared/components/withHeaderAndFooter/withHeaderAndFooter";
-import { ToastContainer } from 'react-toastify';
+import {
+  Home,
+  ProductListing,
+  Routes,
+  Route,
+  MockAPI,
+  Cart,
+  Wishlist,
+  Auth,
+  Login,
+  Signup,
+  PrivateRoute,
+  useAuth,
+  WithHeaderAndFooter,
+  ToastContainer,
+  PageNotFound,
+} from "./appImports"
 import 'react-toastify/dist/ReactToastify.css';
-import { PageNotFound } from "./shared/components/404NotFound/pageNotFound";
 
 function App() {
   const { isUserLoggedIn } = useAuth();

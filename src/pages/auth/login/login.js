@@ -1,25 +1,28 @@
 import React, { useState } from "react";
-import { Link,useNavigate,useLocation} from "react-router-dom";
-import { AuthContainer } from "../components/authContainer";
-import { signin } from "../../../assets/images";
 import {
-  BsFillEyeFill,BsFillEyeSlashFill,
+  Link,
+  useNavigate,
+  useLocation,
+  AuthContainer,
+  signin,
+  BsFillEyeFill,
+  BsFillEyeSlashFill,
   FaEnvelope,
   AiOutlineArrowRight,
-} from "../../../assets/icons";
-import { useAuth } from "../../../context/auth/authContext";
-import { toast } from "react-toastify";
+  useAuth,
+  toast
+} from "../index";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const { login } = useAuth();
-  
-  const {pathname} = useLocation();
+
+  const { pathname } = useLocation();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    rememberMe : false
+    rememberMe: false,
   });
   const handleOnChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -29,14 +32,14 @@ const Login = () => {
     e.preventDefault();
     const success = await login({ email, password });
     if (success) {
-      if(pathname === "/signup"){
+      if (pathname === "/signup") {
         navigate("/");
-      }else{
+      } else {
         navigate(-1);
       }
-      toast.success("Login successful")
-    }else{
-      toast.error("Entered wrong credentials")
+      toast.success("Login successful");
+    } else {
+      toast.error("Entered wrong credentials");
     }
   };
   return (
@@ -55,12 +58,10 @@ const Login = () => {
                 type="email"
                 placeholder="priya@gmail.com"
                 value={formData.email}
-                onChange={
-                  handleOnChange
-                }
+                onChange={handleOnChange}
                 required
               />
-              <FaEnvelope className="email-icon text-xs"/>
+              <FaEnvelope className="email-icon text-xs" />
             </div>
           </li>
           <li className="list-style-none">
@@ -74,12 +75,10 @@ const Login = () => {
                 type={showPassword ? "text" : "password"}
                 placeholder="•••••••••"
                 value={formData.password}
-                onChange={
-                  handleOnChange
-                }
+                onChange={handleOnChange}
                 required
               />
-            {showPassword ? (
+              {showPassword ? (
                 <BsFillEyeFill
                   className="password-eye-icon text-xs"
                   onClick={() => {
@@ -99,7 +98,7 @@ const Login = () => {
           <li className="list-style-none">
             <div className="flex-row align-center justify-between mt-1">
               <div className="flex-row align-center my-2">
-                <input type="checkbox" id="terms" onChange={handleOnChange}/>
+                <input type="checkbox" id="terms" onChange={handleOnChange} />
                 <label className="text-xs ml-1" htmlFor="terms">
                   Remember me
                 </label>
