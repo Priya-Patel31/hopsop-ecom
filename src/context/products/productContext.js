@@ -18,7 +18,7 @@ const ProductContextProvider = ({ children }) => {
     brands: [],
     selectedBrands:{},
     ratings : null,
-    range: 5000,
+    range: 2500,
     categories: [],
     selectedCategories : {}
 
@@ -39,7 +39,7 @@ const ProductContextProvider = ({ children }) => {
           payload: { products: data.products, categories: data.categories ,brands:data.brands},
         });
       } else {
-        //TODO : error handling
+        toast.success("Data fetched successfully");
       }
     })();
   }, []);

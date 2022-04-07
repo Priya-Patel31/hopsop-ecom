@@ -19,7 +19,7 @@ const WishlistContextProvider = ({ children }) => {
     if (status !== "IDLE") return;
     (async function () {
       dispatch({ type: "UPDATE_STATUS", payload: { status: "PENDING" } });
-      const { data, success, message } = await fetchWishlistDataApi();
+      const { data, success } = await fetchWishlistDataApi();
       if (success) {
         dispatch({
           type: "UPDATE_WISHLIST",
